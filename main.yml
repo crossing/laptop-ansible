@@ -19,3 +19,15 @@
       url: https://raw.githubusercontent.com/Yubico/libu2f-host/master/70-u2f.rules
       dest: /etc/udev/rules.d/70-u2f.rules
       force: true
+  - name: add wheel group to cups admin
+    replace:
+      dest: /etc/cups/cups-files.conf
+      regexp: ^SystemGroup(.*)$
+      replace: SystemGroup\1 wheel
+    notify:
+      - restart cups
+  handlers:
+  - name: restart cups
+    service:
+      name: cups
+      state: restarted
