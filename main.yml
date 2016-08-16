@@ -26,6 +26,15 @@
       replace: SystemGroup\1 wheel
     notify:
       - restart cups
+  - name: install zsh
+    package: name=zsh state=present
+  - name: install emacs
+    package: name=emacs state=present
+  - name: install git
+    package: name=git state=present
+  - name: install stow
+    package: name=stow state=present
+
   handlers:
   - name: restart cups
     service:
