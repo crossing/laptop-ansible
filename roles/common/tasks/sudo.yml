@@ -1,0 +1,4 @@
+- name: ensure sudo not asking for password
+  copy:
+    content: '%wheel  ALL=(ALL)	NOPASSWD: ALL'
+    dest: /etc/sudoers.d/nopasswd
