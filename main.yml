@@ -6,6 +6,26 @@
     copy:
       content: '%wheel  ALL=(ALL)	NOPASSWD: ALL'
       dest: /etc/sudoers.d/nopasswd
+  - name: add missing resolution
+    copy:
+      content: |
+        Section "Monitor"
+          Identifier "eDP-1"
+          Modeline "1920x1080_60.00" 172.80 1920 2040 2248 2576 1080 1081 1084 1118 -HSync +Vsync
+        EndSection
+      dest: /etc/X11/xorg.conf.d/10-monitor.conf
+  - name: add yubikey udev rules
+    get_url:
+      url: https://raw.githubusercontent.com/Yubico/libu2f-host/master/70-u2f.rules
+      dest: /etc/udev/rules.d/70-u2f.rules
+      force: true
+  - name: add wheel group to cups admin
+    replace:
+      dest: /etc/cups/cups-files.conf
+      regexp: ^SystemGroup(.*?)(\s+wheel)?$
+      replace: SystemGroup\1 wheel
+    notify:
+      - restart cups
   - name: install zsh
     package: name=zsh state=present
   - name: install emacs
@@ -14,3 +34,9 @@
     package: name=git state=present
   - name: install stow
     package: name=stow state=present
+
+  handlers:
+  - name: restart cups
+    service:
+      name: cups
+      state: restarted
