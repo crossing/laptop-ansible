@@ -2,6 +2,6 @@
   replace:
     dest: /etc/cups/cups-files.conf
     regexp: ^SystemGroup(.*?)(\s+wheel)?$
-    replace: SystemGroup\1 wheel
+    replace: SystemGroup\1 {{ admin_group }}
   notify:
     - restart cups
