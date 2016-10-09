@@ -4,12 +4,14 @@
   package: name={{ item }} state=present
   with_items:
     - VirtualBox-{{ version }}
+    - kernel-headers
+    - kernel-devel
     - dkms
 
 - name: add user to vbox and disk groups
   user:
     name: "{{ item[0] }}"
-    group: "{{ item[1] }}"
+    groups: "{{ item[1] }}"
     append: yes
   with_nested:
     - "{{ users }}"
