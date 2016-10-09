@@ -5,3 +5,12 @@
   with_items:
     - VirtualBox-{{ version }}
     - dkms
+
+- name: add user to vbox and disk groups
+  user:
+    name: "{{ item[0] }}"
+    group: "{{ item[1] }}"
+    append: yes
+  with_nested:
+    - "{{ users }}"
+    - ['vboxusers', 'disk']
