@@ -1,0 +1,7 @@
+- name: import virtualbox repository key
+  rpm_key: state=present key={{ role_path }}/files/oracle_vbox.asc
+
+- name: add virtualbox repository
+  copy:
+    src: "{{ role_path }}/files/virtualbox.repo"
+    dest: /etc/yum.repos.d/virtualbox.repo
