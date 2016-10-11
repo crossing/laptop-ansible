@@ -8,3 +8,5 @@
     - fasd
     - hplip-gui
     - playonlinux
+
+- include: "{{ ansible_distribution }}/packages.yml"
