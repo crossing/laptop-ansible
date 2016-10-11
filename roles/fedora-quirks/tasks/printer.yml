@@ -1,7 +1,7 @@
-- name: add wheel group to cups admin
+- name: add {{ admin_group }} group to cups admin
   replace:
     dest: /etc/cups/cups-files.conf
-    regexp: ^SystemGroup(.*?)(\s+wheel)?$
+    regexp: ^SystemGroup(.*?)(\s+{{ admin_group }})?$
     replace: SystemGroup\1 {{ admin_group }}
   notify:
     - restart cups
