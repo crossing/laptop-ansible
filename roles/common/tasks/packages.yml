@@ -8,5 +8,8 @@
     - fasd
     - hplip-gui
     - playonlinux
+    - "{{ jre8_package }}"
+    - "{{ jdk8_package }}"
+    - icedtea-web
 
 - include: "{{ ansible_distribution }}/packages.yml"
