@@ -1,0 +1,4 @@
+- name: add docker repository
+  copy:
+    src: "{{ role_path }}/files/docker.repo"
+    dest: /etc/yum.repos.d/docker.repo
