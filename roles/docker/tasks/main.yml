@@ -2,3 +2,17 @@
 
 - name: install docker
   package: name=docker-engine state=present
+
+- name: enable and start docker service
+  service: name=docker enabled=yes state=started
+
+- name: add docker group
+  group: name=docker state=present
+
+- name: add users to docker group
+  user:
+    name: "{{ item }}"
+    groups: docker
+    append: yes
+  with_items:
+    - "{{ users }}"
