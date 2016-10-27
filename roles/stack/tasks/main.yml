@@ -1,0 +1,4 @@
+- include: "add-repo-{{ ansible_distribution }}.yml"
+
+- name: install haskell stack
+  package: name=stack state=present
