@@ -7,7 +7,6 @@
     - stow
     - fasd
     - hplip-gui
-    - playonlinux
     - "{{ jre8_package }}"
     - "{{ jdk8_package }}"
     - icedtea-web
