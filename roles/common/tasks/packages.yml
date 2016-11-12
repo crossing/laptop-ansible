@@ -10,6 +10,7 @@
     - "{{ jre8_package }}"
     - "{{ jdk8_package }}"
     - icedtea-web
+    - texlive-scheme-full
     # develop libs
     - openssl-devel
     - readline-devel
