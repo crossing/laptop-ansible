@@ -11,6 +11,7 @@
     - "{{ jdk8_package }}"
     - icedtea-web
     - texlive-scheme-full
+    - latexmk
     # develop libs
     - openssl-devel
     - readline-devel
