@@ -8,5 +8,4 @@
     - fedora-quirks
     - common
     - virtualbox
-    - docker
-    - stack
+    - develop
