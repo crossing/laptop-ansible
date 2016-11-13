@@ -1,0 +1,2 @@
+- name: install mendeley
+  dnf: name=https://github.com/hmaarrfk/mendeley-rpm/releases/download/1.6.1-2/mendeleydesktop-1.16.1-2.fc23.{{ ansible_machine }}.rpm state=present
