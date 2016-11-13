@@ -6,6 +6,9 @@
 - hosts: Fedora
   roles:
     - fedora-quirks
+
+- hosts: all
+  roles:
     - common
     - virtualbox
     - develop
