@@ -1,3 +1,5 @@
+- include: "{{ ansible_distribution }}/packages.yml"
+
 - name: install packages
   package: name={{ item }} state=present
   with_items:
@@ -7,5 +9,5 @@
     - fasd
     - hplip-gui
     - icedtea-web
-
-- include: "{{ ansible_distribution }}/packages.yml"
+    - transmission
+    - vlc
