@@ -1,9 +1,6 @@
 - name: install skype
   dnf: name=https://download.skype.com/linux/skype-4.3.0.37-fedora.i586.rpm state=present
 
-- name: install dropbox
-  dnf: name=https://www.dropbox.com/download?dl=packages/fedora/nautilus-dropbox-2015.10.28-1.fedora.x86_64.rpm state=present
-
 - name: install insync
   dnf: name=http://s.insynchq.com/builds/insync-1.3.12.36116-fc21.i686.rpm state=present
 
