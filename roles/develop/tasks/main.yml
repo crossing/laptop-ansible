@@ -12,3 +12,5 @@
     - openssl-devel
     - readline-devel
     - zlib-devel
+    - bzip2-devel
+    - sqlite-devel
