@@ -1,9 +1,6 @@
 - name: install skype
   dnf: name=https://download.skype.com/linux/skype-4.3.0.37-fedora.i586.rpm state=present
 
-- name: install insync
-  dnf: name=http://s.insynchq.com/builds/insync-1.3.12.36116-fc21.i686.rpm state=present
-
 - name: add rpmfusion repos
   dnf: name=https://download1.rpmfusion.org/{{ item }}/fedora/rpmfusion-{{ item }}-release-{{ansible_distribution_version}}.noarch.rpm state=present
   with_items:
