@@ -4,3 +4,4 @@ users:
 
 # Review the following software version regularly to keep up to date
 terraform_version: 0.8.7
+mendeley_version:  1.17.6-3
