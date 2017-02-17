@@ -2,6 +2,7 @@
 - hosts: all
   tasks:
     - group_by: key={{ ansible_distribution }}
+    - group_by: key={{ ansible_architecture }}
 
 - hosts: Fedora
   roles:

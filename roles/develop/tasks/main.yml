@@ -12,3 +12,11 @@
     - zlib-devel
     - bzip2-devel
     - sqlite-devel
+
+- name: install terraform
+  unarchive:
+    dest: /usr/local/bin
+    src: https://releases.hashicorp.com/terraform/{{ terraform_version }}/terraform_{{ terraform_version }}_{{ ansible_system | lower }}_{{ platform_arch }}.zip
+    remote_src: yes
+    keep_newer: yes
+    mode: 0755
