@@ -6,3 +6,6 @@
   with_items:
     - free
     - nonfree
+
+- name: add keybase
+  dnf: name=https://prerelease.keybase.io/keybase_{{ platform_arch }}.rpm
