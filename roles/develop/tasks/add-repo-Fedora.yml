@@ -7,3 +7,8 @@
   copy:
     src: "{{ role_path }}/files/fpco.repo"
     dest: /etc/yum.repos.d/fpco.repo
+
+- name: add google cloud sdk repository
+  copy:
+    src: "{{ role_path }}/files/google-cloud-sdk.repo"
+    dest: /etc/yum.repos.d/google-cloud-sdk.repo
