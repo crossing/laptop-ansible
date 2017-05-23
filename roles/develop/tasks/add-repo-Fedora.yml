@@ -3,11 +3,6 @@
     src: "{{ role_path }}/files/docker.repo"
     dest: /etc/yum.repos.d/docker.repo
 
-- name: add stack repository
-  copy:
-    src: "{{ role_path }}/files/fpco.repo"
-    dest: /etc/yum.repos.d/fpco.repo
-
 - name: add google cloud sdk repository
   copy:
     src: "{{ role_path }}/files/google-cloud-sdk.repo"
