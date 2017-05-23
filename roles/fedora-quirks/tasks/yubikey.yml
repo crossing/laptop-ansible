@@ -1,5 +1,2 @@
 - name: add yubikey udev rules
-  get_url:
-    url: https://raw.githubusercontent.com/Yubico/libu2f-host/master/70-u2f.rules
-    dest: /etc/udev/rules.d/70-u2f.rules
-    force: true
+  package: name=u2f-hidraw-policy state=present
