@@ -3,5 +3,5 @@ users:
   - xing
 
 # Review the following software version regularly to keep up to date
-terraform_version: 0.9.5
+terraform_version: 0.9.6
 mendeley_version:  1.17.6-3
