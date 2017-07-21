@@ -7,3 +7,8 @@
   copy:
     src: "{{ role_path }}/files/google-cloud-sdk.repo"
     dest: /etc/yum.repos.d/google-cloud-sdk.repo
+
+- name: add sbt repository
+  copy:
+    src: "{{ role_path }}/files/sbt.repo"
+    dest: /etc/yum.repos.d/sbt.repo
