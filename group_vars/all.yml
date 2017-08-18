@@ -3,6 +3,6 @@ users:
   - xing
 
 # Review the following software version regularly to keep up to date
-terraform_version: 0.9.11
+terraform_version: 0.10.2
 mendeley_version:  1.17.6-3
 aws_vault_version: 3.7.1
