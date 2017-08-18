@@ -1,7 +1,12 @@
 - include: "add-repo-{{ ansible_distribution }}.yml"
 
 - name: install docker
-  package: name=docker-engine state=present
+  package: name=docker-ce state=present
+
+- name: configure docker
+  copy:
+    src: "{{ role_path }}/files/docker-daemon.json"
+    dest: /etc/docker/daemon.json
 
 - name: enable and start docker service
   service: name=docker enabled=yes state=started
