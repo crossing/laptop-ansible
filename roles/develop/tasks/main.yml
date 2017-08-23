@@ -1,6 +1,7 @@
 - include: "add-repo-{{ ansible_distribution }}.yml"
 - include: docker.yml
 - include: gcs.yml
+- include: aws.yml
 - include: sbt.yml
 
 - name: install {{ item }}
