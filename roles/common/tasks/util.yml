@@ -1,0 +1,5 @@
+- name: duplex scan script
+  copy:
+    src: "{{ role_path }}/files/duplex-scan.sh"
+    dest: /usr/local/bin/duplex-scan
+    mode: 0755
