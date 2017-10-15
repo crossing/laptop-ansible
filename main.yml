@@ -11,6 +11,5 @@
 - hosts: all
   roles:
     - common
-    - virtualbox
     - develop
     - study
