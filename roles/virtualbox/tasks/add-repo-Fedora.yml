@@ -1,0 +1,4 @@
+- name: add virtualbox repository
+  copy:
+    src: "{{ role_path }}/files/virtualbox.repo"
+    dest: /etc/yum.repos.d/virtualbox.repo
