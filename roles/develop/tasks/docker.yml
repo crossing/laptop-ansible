@@ -2,6 +2,11 @@
 
 - name: install docker
   package: name=docker-ce state=present
+  
+- name: create docker config directory
+  file:
+    path: /etc/docker
+    state: directory
 
 - name: configure docker
   copy:
