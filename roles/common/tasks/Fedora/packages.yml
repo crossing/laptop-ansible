@@ -4,9 +4,6 @@
     - free
     - nonfree
 
-- name: add keybase
-  dnf: name=https://prerelease.keybase.io/keybase_{{ platform_arch }}.rpm
-
 - name: add insync repo
   copy:
     src: "{{ role_path }}/files/insync.repo"
