@@ -1,6 +1,6 @@
 [virtualbox]
 name=Fedora 26 - $basearch - VirtualBox
-baseurl=http://download.virtualbox.org/virtualbox/rpm/fedora/26/$basearch
+baseurl=http://download.virtualbox.org/virtualbox/rpm/fedora/27/$basearch
 enabled=1
 gpgcheck=1
 repo_gpgcheck=1
