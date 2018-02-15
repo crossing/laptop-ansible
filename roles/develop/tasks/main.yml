@@ -2,7 +2,6 @@
 - include: docker.yml
 - include: gcs.yml
 - include: aws.yml
-- include: sbt.yml
 
 - name: install {{ item }}
   package: name={{ item }} state=present
