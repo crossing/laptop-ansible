@@ -1,8 +1,0 @@
-- name: install awscli
-  package: name=awscli state=present
-
-- name: install awscli zsh completion
-  copy:
-    content: source /usr/share/zsh/site-functions/aws_zsh_completer.sh
-    dest: /usr/local/bin/aws_zsh_completer.sh
-    mode: 0755

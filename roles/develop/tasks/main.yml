@@ -1,7 +1,5 @@
 - include: "add-repo-{{ ansible_distribution }}.yml"
 - include: docker.yml
-- include: gcs.yml
-- include: aws.yml
 
 - name: install {{ item }}
   package: name={{ item }} state=present
@@ -14,19 +12,3 @@
     - bzip2-devel
     - sqlite-devel
     - libcurl-devel
-
-- name: install terraform
-  unarchive:
-    dest: /usr/local/bin
-    src: https://releases.hashicorp.com/terraform/{{ terraform_version }}/terraform_{{ terraform_version }}_{{ ansible_system | lower }}_{{ platform_arch }}.zip
-    remote_src: yes
-    keep_newer: yes
-    mode: 0755
-    validate_certs: no
-
-- name: install aws-vault
-  get_url:
-    url: https://github.com/99designs/aws-vault/releases/download/v{{ aws_vault_version }}/aws-vault-{{ ansible_system | lower }}-{{ platform_arch }}
-    dest: /usr/local/bin/aws-vault
-    mode: 0755
-    force: yes

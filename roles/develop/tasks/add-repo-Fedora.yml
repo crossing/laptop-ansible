@@ -2,8 +2,4 @@
   copy:
     src: "{{ role_path }}/files/docker-ce.repo"
     dest: /etc/yum.repos.d/docker-ce.repo
-
-- name: add google cloud sdk repository
-  copy:
-    src: "{{ role_path }}/files/google-cloud-sdk.repo"
-    dest: /etc/yum.repos.d/google-cloud-sdk.repo
+    

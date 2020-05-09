@@ -1,2 +1,0 @@
-- name: install google cloud sdk
-  package: name=google-cloud-sdk state=present

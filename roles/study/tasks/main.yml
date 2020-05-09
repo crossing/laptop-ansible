@@ -1,7 +1,0 @@
-- include: "{{ ansible_distribution }}/packages.yml"
-
-- name: install latex
-  package: name={{ item }} state=present
-  with_items:
-    - texlive-scheme-full
-    - latexmk

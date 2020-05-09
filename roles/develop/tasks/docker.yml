@@ -8,11 +8,6 @@
     path: /etc/docker
     state: directory
 
-- name: configure docker
-  copy:
-    src: "{{ role_path }}/files/docker-daemon.json"
-    dest: /etc/docker/daemon.json
-
 - name: enable and start docker service
   service: name=docker enabled=yes state=started
 

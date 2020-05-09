@@ -5,9 +5,7 @@
   with_items:
     - zsh
     - emacs
-    - stow
     - fasd
     - hplip-gui
     - dropbox
     - insync
-    - p7zip-plugins    
