@@ -1,0 +1,4 @@
+- name: install insync
+  package:
+    name: insync
+    state: present

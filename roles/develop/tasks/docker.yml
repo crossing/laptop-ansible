@@ -1,18 +1,46 @@
 - include: "add-repo-{{ ansible_distribution }}.yml"
 
+- name: uninstall old docker
+  package:
+    name: "{{ item }}"
+    state: absent
+  with_items:
+    # ubuntu old packages
+    - docker
+    - docker-engine
+    - docker.io
+    - containerd
+    - runc
+    # fedora old packages
+    - docker-client
+    - docker-client-latest
+    - docker-common
+    - docker-latest
+    - docker-latest-logrotate
+    - docker-logrotate
+    - docker-selinux
+    - docker-engine-selinux
+    - docker-engine
+
 - name: install docker
-  package: name=docker-ce state=present
-  
-- name: create docker config directory
-  file:
-    path: /etc/docker
-    state: directory
+  package:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - docker-ce
+    - docker-ce-cli
+    - containerd.io
 
 - name: enable and start docker service
-  service: name=docker enabled=yes state=started
+  service:
+    name: docker
+    enabled: yes
+    state: started
 
 - name: add docker group
-  group: name=docker state=present
+  group:
+    name: docker
+    state: present
 
 - name: add users to docker group
   user:

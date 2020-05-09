@@ -1,0 +1,11 @@
+- name: install dropbox
+  apt:        
+    deb: "https://www.dropbox.com/download?dl=packages/ubuntu/dropbox_2020.03.04_amd64.deb"
+    state: present
+  when: ansible_distribution == 'Ubuntu'
+
+- name: install dropbox
+  dnf:        
+    name: "https://www.dropbox.com/download?dl=packages/fedora/nautilus-dropbox-2020.03.04-1.fedora.x86_64.rpm"   
+    state: present
+  when: ansible_distribution == 'Fedora'

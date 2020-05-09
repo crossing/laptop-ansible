@@ -2,3 +2,5 @@
   copy:
     content: "%{{ admin_group }}  ALL=(ALL)	NOPASSWD: ALL"
     dest: /etc/sudoers.d/nopasswd
+  notify: restart sudo    
+

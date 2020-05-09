@@ -1,0 +1,10 @@
+- name: add insync repo key
+  apt_key:
+    id: ACCAF35C
+    keyserver: keyserver.ubuntu.com
+    state: present
+
+- name: add insync repo
+  apt_repository:
+    repo: "deb http://apt.insync.io/ubuntu {{ ansible_distribution_release }} non-free contrib"
+    state: present  

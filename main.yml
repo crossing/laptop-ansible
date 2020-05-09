@@ -10,6 +10,8 @@
 
 - hosts: all
   roles:
-    - common
+    # - common
+    - base
+    - desktop
     - develop
-
+    - util

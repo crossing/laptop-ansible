@@ -1,0 +1,9 @@
+- name: add insync repo key
+  rpm_key:
+    key: https://d2t3ff60b2tol4.cloudfront.net/repomd.xml.key
+    state: present
+
+- name: add insync repo
+  copy:
+    src: "{{ role_path }}/files/insync.repo"
+    dest: /etc/yum.repos.d/insync.repo

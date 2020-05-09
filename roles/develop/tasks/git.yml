@@ -1,0 +1,10 @@
+- name: install git
+  package:
+    name: git
+    state: present
+
+- name: install libsecret credential helper
+  shell:
+    cmd: make
+    creates: /usr/share/doc/git/contrib/credential/libsecret/git-credential-libsecret
+    chdir: /usr/share/doc/git/contrib/credential/libsecret

@@ -1,0 +1,12 @@
+- name: install libraries
+  package:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - libssl-dev
+    - libreadline-dev
+    - libzip-dev
+    - libbz2-dev
+    - libsqlite3-dev
+    - libcurl4-openssl-dev
+    - libsecret-1-dev

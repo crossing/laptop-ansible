@@ -1,0 +1,9 @@
+- name: install libraries
+  package: name={{ item }} state=present
+  with_items:
+    - openssl-devel
+    - readline-devel
+    - zlib-devel
+    - bzip2-devel
+    - sqlite-devel
+    - libcurl-devel

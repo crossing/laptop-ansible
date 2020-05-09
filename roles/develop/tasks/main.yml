@@ -1,14 +1,6 @@
-- include: "add-repo-{{ ansible_distribution }}.yml"
-- include: docker.yml
+# - include: "add-repo-{{ ansible_distribution }}.yml"
+# - include: docker.yml
 
-- name: install {{ item }}
-  package: name={{ item }} state=present
-  with_items:
-    - git
-    # develop libs
-    - openssl-devel
-    - readline-devel
-    - zlib-devel
-    - bzip2-devel
-    - sqlite-devel
-    - libcurl-devel
+- include: "add-lib-{{ ansible_distribution }}.yml"
+- include: docker.yml
+- include: git.yml
