@@ -2,7 +2,10 @@
 - include: insync.yml
 - include: dropbox.yml
 
-- name: install desktop softwares
+- name: install desktop packages
   package:
-    name: hplip-gui
+    name: "{{ item }}"
     state: present
+  with_items:
+    - hplip-gui
+    - pipewire
