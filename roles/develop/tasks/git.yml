@@ -1,7 +1,10 @@
 - name: install git
   package:
-    name: git
+    name: "{{ item }}"
     state: present
+  with_items:
+    - git
+    - git-lfs
 
 - name: install libsecret credential helper
   shell:
