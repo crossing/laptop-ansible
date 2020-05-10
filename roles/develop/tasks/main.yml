@@ -4,3 +4,9 @@
 - include: "add-lib-{{ ansible_distribution }}.yml"
 - include: docker.yml
 - include: git.yml
+
+- name: install vscode
+  package:
+    name: code
+    state: present
+
