@@ -6,7 +6,7 @@
 
 - name: add docker repository
   apt_repository:
-    filename: docker.list
+    filename: docker
     repo: "deb [arch=amd64] https://download.docker.com/linux/ubuntu eoan stable"
     state: present  
 
@@ -17,6 +17,6 @@
 
 - name: add vscode repository
   apt_repository:
-    filename: vscode.list
+    filename: vscode
     repo: "deb [arch=amd64] http://packages.microsoft.com/repos/vscode stable main"
     state: present
