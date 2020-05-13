@@ -9,3 +9,4 @@
   with_items:
     - hplip-gui
     - pipewire
+    - google-chrome-stable
