@@ -6,5 +6,6 @@
 
 - name: add insync repo
   apt_repository:
+    filename: insync
     repo: "deb http://apt.insync.io/ubuntu {{ ansible_distribution_release }} non-free contrib"
     state: present  
