@@ -11,3 +11,8 @@
     state: present
     classic: true
 
+- name: install secrethub
+  snap:
+    name: secrethub-cli
+    state: present
+
