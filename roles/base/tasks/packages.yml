@@ -1,8 +1,8 @@
 - name: install packages
   package: name={{ item }} state=present
   with_items:
-    - zsh
-    - emacs
-    - vim
-    - neovim
-    - jq
+  - zsh
+  - emacs
+  - vim
+  - neovim
+  - jq

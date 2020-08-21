@@ -7,6 +7,6 @@
     name: "{{ item }}"
     state: present
   with_items:
-    - hplip-gui
-    - pipewire
-    - google-chrome-stable
+  - hplip-gui
+  - pipewire
+  - google-chrome-stable

@@ -3,12 +3,23 @@
     name: https://download1.rpmfusion.org/{{ item }}/fedora/rpmfusion-{{ item }}-release-{{ansible_distribution_version}}.noarch.rpm
     state: present
   with_items:
-    - free
-    - nonfree
+  - free
+  - nonfree
+
+- name: enable snap store
+  package:
+    name: snapd
+    state: present
+
+- name: enable snap classic mode
+  file:
+    path: /snap
+    src: /var/lib/snapd/snap
+    state: link
 
 - name: install ansible dependencies
   package:
     name: "{{ item }}"
     state: present
   with_items:
-    - python-dnf
+  - python-dnf
