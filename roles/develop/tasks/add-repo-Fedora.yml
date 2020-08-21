@@ -3,14 +3,3 @@
     url: https://download.docker.com/linux/fedora/docker-ce.repo
     dest: /etc/yum.repo.d/docker-ce.repo
     mode: 0644
-
-- name: add vscode rpm key
-  rpm_key: 
-    key: https://packages.microsoft.com/keys/microsoft.asc
-    state: present
-
-- name: add vscode repository
-  copy:
-    src: vscode.yum.repo
-    dest: /etc/yum.repo.d/vscode.repo
-    mode: 0644

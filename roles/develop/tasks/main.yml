@@ -6,7 +6,8 @@
 - include: git.yml
 
 - name: install vscode
-  package:
+  snap:
     name: code
     state: present
+    classic: true
 
