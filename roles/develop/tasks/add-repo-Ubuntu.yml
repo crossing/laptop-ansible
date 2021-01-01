@@ -5,7 +5,9 @@
     state: present
 
 - name: add docker repository
-  apt_repository:
-    filename: docker
-    repo: "deb [arch=amd64] https://download.docker.com/linux/ubuntu eoan stable"
-    state: present  
+  template:
+    src: "{{ role_path }}/files/docker.list"
+    dest: /etc/apt/sources.list.d/docker.list
+    owner: root
+    mode: 0644 
+  notify: apt-update
