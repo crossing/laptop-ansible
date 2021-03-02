@@ -4,14 +4,8 @@
     state: present
   when: ansible_distribution == 'Ubuntu'
   
-- name: add dropbox gpg key
-  rpm_key:
-    state: present
-    key: https://linux.dropbox.com/fedora/rpm-public-key.asc
-  when: ansible_distribution == 'Fedora'
-
 - name: install dropbox
-  dnf:        
-    name: "https://www.dropbox.com/download?dl=packages/fedora/nautilus-dropbox-2020.03.04-1.fedora.x86_64.rpm"   
+  package:
+    name: dropbox
     state: present
   when: ansible_distribution == 'Fedora'
