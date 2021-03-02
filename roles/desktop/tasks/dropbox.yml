@@ -3,6 +3,12 @@
     deb: "https://www.dropbox.com/download?dl=packages/ubuntu/dropbox_2020.03.04_amd64.deb"
     state: present
   when: ansible_distribution == 'Ubuntu'
+  
+- name: add dropbox gpg key
+  rpm_key:
+    state: present
+    key: https://linux.dropbox.com/fedora/rpm-public-key.asc
+  when: ansible_distribution == 'Fedora'
 
 - name: install dropbox
   dnf:        

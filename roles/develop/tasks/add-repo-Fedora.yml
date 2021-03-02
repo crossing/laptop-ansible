@@ -1,5 +1,5 @@
 - name: add docker repository
   get_url:
     url: https://download.docker.com/linux/fedora/docker-ce.repo
-    dest: /etc/yum.repo.d/docker-ce.repo
+    dest: /etc/yum.repos.d/docker-ce.repo
     mode: 0644

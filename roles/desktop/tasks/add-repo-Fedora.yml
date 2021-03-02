@@ -7,3 +7,9 @@
   copy:
     src: "{{ role_path }}/files/insync.repo"
     dest: /etc/yum.repos.d/insync.repo
+    
+- name: add google chrome repo
+  copy:
+    src: "{{ role_path }}/files/google-chrome.repo"
+    dest: /etc/yum.repos.d/google-chrome.repo
+  

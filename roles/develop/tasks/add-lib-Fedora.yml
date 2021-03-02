@@ -1,6 +1,6 @@
 - name: Install development tools
   dnf:
-    name: '@development'
+    name: '@Development Tools'
     state: present
 
 - name: install libraries

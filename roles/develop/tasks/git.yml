@@ -11,3 +11,11 @@
     cmd: make
     creates: /usr/share/doc/git/contrib/credential/libsecret/git-credential-libsecret
     chdir: /usr/share/doc/git/contrib/credential/libsecret
+  when: ansible_distribution == 'Ubuntu'
+  
+- name: install libsecret credential helper
+  package:
+    name: git-credential-libsecret
+    state: present
+  when: ansible_distribution == 'Fedora'
+
