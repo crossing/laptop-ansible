@@ -10,6 +10,11 @@
     repo: "deb http://apt.insync.io/ubuntu {{ ansible_distribution_release }} non-free contrib"
     state: present  
 
+- name: add chrome repo key
+  apt_key:
+    url: "https://dl.google.com/linux/linux_signing_key.pub"
+    state: present      
+
 - name: add chrome repository
   apt_repository:
     filename: google-chrome
