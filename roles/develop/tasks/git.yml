@@ -12,6 +12,15 @@
     creates: /usr/share/doc/git/contrib/credential/libsecret/git-credential-libsecret
     chdir: /usr/share/doc/git/contrib/credential/libsecret
   when: ansible_distribution == 'Ubuntu'
+
+- name: move libsecret to path
+  copy: 
+    src: /usr/share/doc/git/contrib/credential/libsecret/git-credential-libsecret
+    dest: /usr/local/bin/git-credential-libsecret
+    mode: 0755
+    owner: root
+    remote_src: True
+  when: ansible_distribution == 'Ubuntu'
   
 - name: install libsecret credential helper
   package:
