@@ -2,6 +2,9 @@
 - include: insync.yml
 - include: dropbox.yml
 
+- include: audio.yml
+  when: ansible_distribution == 'Ubuntu'
+
 - name: install desktop packages
   package:
     name: "{{ item }}"
@@ -10,3 +13,4 @@
   - hplip-gui
   - pipewire
   - google-chrome-stable
+  - skypeforlinux

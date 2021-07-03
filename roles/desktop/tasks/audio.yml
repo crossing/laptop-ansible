@@ -1,0 +1,12 @@
+- name: add pulseaudio a2dp repo
+  apt_repository:
+    repo: ppa:berglh/pulseaudio-a2dp
+    state: present
+
+- name: install a2dp packages
+  package:
+    name: "{{ item }}"
+    state: present
+  with_items:
+  - pulseaudio-modules-bt
+  - libldac

@@ -18,5 +18,3 @@
     - xz-utils
     - tk-dev
     - liblzma-dev
-    - python-openssl
-    - python3-dev

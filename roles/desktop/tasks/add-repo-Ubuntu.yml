@@ -15,8 +15,19 @@
     url: "https://dl.google.com/linux/linux_signing_key.pub"
     state: present      
 
-- name: add chrome repository
+- name: add chrome repo
   apt_repository:
     filename: google-chrome
     repo: "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main"
+    state: present
+
+- name: add skype repo key
+  apt_key:
+    url: https://repo.skype.com/data/SKYPE-GPG-KEY
+    state: present
+
+- name: add skype repo
+  apt_repository:
+    filename: skype
+    repo: "deb [arch=amd64] https://repo.skype.com/deb stable main"
     state: present
