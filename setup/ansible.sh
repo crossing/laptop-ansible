@@ -1,11 +1,16 @@
 #!/usr/bin/env bash
 
-mkdir -p $HOME/.local/bin
-export PATH=$PATH:$HOME/.local/bin
+THISDIR=$(cd $(dirname $0); pwd)
 
-/usr/bin/python3 -m pip install --user pipx
-
-if ! command -v ansible &> /dev/null
-then
-	pipx install ansible --include-deps
+if [ ! -f /etc/profile.d/nix.sh ]; then
+  echo "Nix is not installed. Bail out."
+  exit 1;
 fi
+
+source /etc/profile.d/nix.sh
+ansible-playbook() {
+  cmd="ansible-playbook $@"
+  echo $cmd;
+
+  nix-shell --run "$cmd"
+}
