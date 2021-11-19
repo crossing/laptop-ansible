@@ -4,10 +4,10 @@
 - include: "add-lib-{{ ansible_distribution }}.yml"
 - include: docker.yml
 - include: git.yml
+- include: arm-support.yml
 
 - name: install vscode
   snap:
     name: code
     state: present
     classic: true
-

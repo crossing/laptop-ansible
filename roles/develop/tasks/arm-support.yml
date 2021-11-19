@@ -1,0 +1,12 @@
+- name: Install arm supports
+  package:
+    name: "{{ item }}"
+  with_items:
+  - qemu-user-static
+  - binfmt-support
+
+- name: Enable and start binfmt
+  systemd:
+    name: binfmt-support
+    state: started
+    enabled: true

@@ -20,25 +20,3 @@
     filename: google-chrome
     repo: "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main"
     state: present
-
-- name: add skype repo key
-  apt_key:
-    url: https://repo.skype.com/data/SKYPE-GPG-KEY
-    state: present
-
-- name: add skype repo
-  apt_repository:
-    filename: skype
-    repo: "deb [arch=amd64] https://repo.skype.com/deb stable main"
-    state: present
-
-- name: add cloudflare repo key
-  apt_key:
-    url: "https://pkg.cloudflareclient.com/pubkey.gpg"
-    state: present
-
-- name: add cloudflare repo
-  apt_repository:
-    filename: cloudflare-client
-    repo: "deb [arch=amd64] http://pkg.cloudflareclient.com/ focal main"
-    state: present
